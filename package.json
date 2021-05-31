@@ -1,0 +1,19 @@
+{
+  "name": "@mkvlrn/eslint-config",
+  "version": "3.0.0",
+  "description": "Set of eslint configurations for different TypeScript/JavaScript projects",
+  "keywords": [
+    "eslint",
+    "config",
+    "airbnb"
+  ],
+  "author": {
+    "name": "Mike Valeriano",
+    "email": "mkvlrn@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mkvlrn/eslint-config"
+  },
+  "license": "MIT"
+}
