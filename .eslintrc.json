@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "eslint-config-airbnb-base",
+    "prettier"
+  ],
+  "env": {
+    "node": true
+  }
+}
