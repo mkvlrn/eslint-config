@@ -25,7 +25,7 @@ Four possible configurations js/ts (and an extra for jest only) can be extended 
 // .eslintrc.js
 // this extends the typescript config for react projects
 module.exports {
-  extends: "@mkvlrn/eslint-config/ts"
+  extends: "@mkvlrn/eslint-config/ts-react"
   ...
 }
 ```
