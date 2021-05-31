@@ -20,12 +20,10 @@
   "license": "MIT",
   "devDependencies": {
     "@mkvlrn/prettier-config": "^1.0.0",
-    "eslint": "*",
     "git-commit-msg-linter": "^3.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0",
-    "typescript": "*"
+    "prettier": "^2.3.0"
   },
   "scripts": {
     "prepare": "husky install"
