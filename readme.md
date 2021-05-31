@@ -51,3 +51,7 @@ this [rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/r
 ### react/jsx-uses-react & react/react-in-jsx-scope
 
 react's [new jsx transform doesn't expect React to be in scope](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) when using jsx, and these rules expect it to be imported
+
+## why is the first published version 3.0.0
+
+Eh, I messed up...
