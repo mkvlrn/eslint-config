@@ -17,6 +17,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "git-commit-msg-linter": "^3.1.0"
+    "@mkvlrn/prettier-config": "^1.0.0",
+    "git-commit-msg-linter": "^3.1.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
   }
 }
