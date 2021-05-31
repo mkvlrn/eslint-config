@@ -8,6 +8,10 @@ Mainly extends [AirBnb's excellent guide](https://github.com/airbnb/javascript),
 
 It also bundles ALL `dependencies` (that should be `peerDependencies`) but since an [ESLint flat config is still so far away](https://github.com/eslint/eslint/issues/13481), everything is installed as `devDependencies`.
 
+## why
+
+Convenience. Not having to juggle packages left and right before using eslint is a far away dream, but we can hack it today.
+
 ## install
 
 ```bash
