@@ -1,6 +1,6 @@
 {
   "name": "@mkvlrn/eslint-config",
-  "version": "24.5.1",
+  "version": "24.5.2",
   "description": "Custom flat ESLint configuration for my projects",
   "type": "module",
   "keywords": [
@@ -10,7 +10,7 @@
   ],
   "main": "index.js",
   "files": [
-    "config.js",
+    "configs.js",
     "index.js",
     "vite.js",
     "next.js",
