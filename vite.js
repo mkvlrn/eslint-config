@@ -1,4 +1,4 @@
-import eslintTypescript from 'typescript-eslint';
-import { createConfig } from './configs.js';
+import eslintTypescript from "typescript-eslint";
+import { createConfig } from "./configs.js";
 
-export default eslintTypescript.config(...createConfig('vite'));
+export default eslintTypescript.config(...createConfig("vite"));
