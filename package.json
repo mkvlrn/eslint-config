@@ -1,0 +1,44 @@
+{
+  "name": "@mkvlrn/eslint-config",
+  "version": "24.05.0",
+  "description": "Custom flat ESLint configuration for my projects",
+  "type": "module",
+  "keywords": [
+    "eslint",
+    "config",
+    "custom"
+  ],
+  "main": "index.js",
+  "files": [
+    "config.js",
+    "index.js",
+    "vite.js",
+    "next.js",
+    "package.json",
+    "readme.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "author": "Mike Valeriano <mkvlrn@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.3.0",
+    "@next/eslint-plugin-next": "^14.2.3",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unicorn": "^53.0.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "typescript-eslint": "^7.11.0"
+  }
+}
