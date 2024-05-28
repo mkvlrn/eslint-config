@@ -20,14 +20,7 @@ export function createConfig(name) {
 
     // typescript-eslint settings
     {
-      languageOptions: {
-        parserOptions: {
-          parser,
-          ecmaVersion: "latest",
-          project: false,
-          // tsconfigRootDir: import.meta.dirname,
-        },
-      },
+      languageOptions: { parserOptions: { parser, ecmaVersion: "latest", project: false } },
       settings: { "import/resolver": { typescript: {} } },
       rules: {
         // reminds you to remove scattered console statements
@@ -37,9 +30,7 @@ export function createConfig(name) {
 
     // eslint-plugin-import
     {
-      plugins: {
-        import: pluginImport,
-      },
+      plugins: { import: pluginImport },
       rules: {
         ...pluginImport.configs.recommended.rules,
         ...pluginImport.configs.typescript.rules,
@@ -72,15 +63,10 @@ export function createConfig(name) {
   if (name === "vite" || name === "next") {
     const viteNextConfigs = {
       files: ["*.jsx", "*.tsx"],
-      plugins: {
-        react: pluginReact,
-        "react-hooks": pluginReactHooks,
-        // '@next/next': pluginNext,
-      },
+      plugins: { react: pluginReact, "react-hooks": pluginReactHooks },
       rules: {
         ...pluginReact.configs["jsx-runtime"].rules,
         ...pluginReactHooks.configs.recommended.rules,
-        // ...pluginNext.configs['core-web-vitals'].rules,
       },
     };
     if (name === "vite") {
@@ -98,9 +84,7 @@ export function createConfig(name) {
   config.push(
     // eslint-plugin-unicorn
     {
-      plugins: {
-        unicorn: pluginUnicorn,
-      },
+      plugins: { unicorn: pluginUnicorn },
       rules: {
         ...pluginUnicorn.configs["flat/recommended"].rules,
         // null is fine
@@ -121,9 +105,7 @@ export function createConfig(name) {
     // eslint-plugin-vitest
     {
       files: ["*.test.ts", "*.spec.ts", "*.test.tsx", "*.spec.tsx"],
-      plugins: {
-        vitest: pluginVitest,
-      },
+      plugins: { vitest: pluginVitest },
       rules: {
         ...pluginVitest.configs.recommended.rules,
       },

@@ -5,15 +5,41 @@ on:
     branches:
       - main
 
+permissions: write-all
 jobs:
   release:
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
+
+      - name: calver
+        run: |
+          DATE_VERSION=$(date +"%y.%-m")
+          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          LATEST_TAG_DATE=$(echo $LATEST_TAG | cut -c 2- | cut -d '.' -f 1-2)
+          LATEST_TAG_PATCH_VERSION=$(echo $LATEST_TAG | cut -d '.' -f 3)
+
+          if [ "$DATE_VERSION" = "$LATEST_TAG_DATE" ]; then
+            NEXT_PATCH_VERSION=$((LATEST_TAG_PATCH_VERSION + 1))
+          else
+            NEXT_PATCH_VERSION=0
+          fi
+
+          NEW_VERSION="$DATE_VERSION.$NEXT_PATCH_VERSION"
+          jq ".version=\"$NEW_VERSION\"" package.json > "tmp.json" && mv "tmp.json" package.json
+          git tag "v$NEW_VERSION"
+          git push origin "v$NEW_VERSION"
+
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
