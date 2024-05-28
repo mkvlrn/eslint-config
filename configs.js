@@ -24,8 +24,8 @@ export function createConfig(name) {
         parserOptions: {
           parser,
           ecmaVersion: "latest",
-          project: true,
-          tsconfigRootDir: import.meta.dirname,
+          project: false,
+          // tsconfigRootDir: import.meta.dirname,
         },
       },
       settings: { "import/resolver": { typescript: {} } },

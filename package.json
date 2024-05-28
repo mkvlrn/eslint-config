@@ -1,6 +1,6 @@
 {
   "name": "@mkvlrn/eslint-config",
-  "version": "24.5.3",
+  "version": "24.5.4",
   "description": "Custom flat ESLint configuration for my projects",
   "type": "module",
   "keywords": [
