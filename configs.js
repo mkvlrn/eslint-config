@@ -15,14 +15,24 @@ export function createConfig(name) {
     eslint.configs.recommended,
 
     // typescript-eslint
-    ...eslintTypescript.configs.strict,
-    ...eslintTypescript.configs.stylistic,
+    ...eslintTypescript.configs.strictTypeChecked,
+    ...eslintTypescript.configs.stylisticTypeChecked,
 
     // typescript-eslint settings
     {
-      languageOptions: { parserOptions: { parser, ecmaVersion: "latest", project: false } },
-      settings: { "import/resolver": { typescript: {} } },
+      languageOptions: { parserOptions: { parser, ecmaVersion: "latest", project: true } },
       rules: {
+        /**
+         * temporarily disable while most npm packages
+         * still export unsafe types all over the place
+         * so I'm guessing until 2034 or something
+         */
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+
         // reminds you to remove scattered console statements
         "no-console": "warn",
         // no default exports
@@ -46,6 +56,7 @@ export function createConfig(name) {
     // eslint-plugin-import
     {
       plugins: { import: pluginImport },
+      settings: { "import/resolver": { typescript: {} } },
       rules: {
         // TODO - revisit these rules
         /**
