@@ -46,7 +46,13 @@ export function createConfig(name) {
       },
     },
     {
-      files: ["src/app/**/{page,layout,template}.tsx", "*.config.{ts,js}", "**/*.config.{ts,js}"],
+      files: [
+        "src/app/**/{page,layout,template}.tsx",
+        "*.config.{ts,js}",
+        "**/*.config.{ts,js}",
+        "*.d.ts",
+        "**/*.d.ts",
+      ],
       rules: {
         // allows default exports for nextjs's page components (app router)
         // some config files also need to export default, so yeah
