@@ -25,6 +25,21 @@ export function createConfig(name) {
       rules: {
         // reminds you to remove scattered console statements
         "no-console": "warn",
+        // no default exports
+        "no-restricted-syntax": [
+          "error",
+          {
+            selector: "ExportDefaultDeclaration",
+            message: "Prefer named exports",
+          },
+        ],
+      },
+    },
+    {
+      files: ["src/app/**/page.tsx"],
+      rules: {
+        // allows default exports for nextjs's page components (app router)
+        "no-restricted-syntax": ["off", { selector: "ExportDefaultDeclaration" }],
       },
     },
 
@@ -32,29 +47,19 @@ export function createConfig(name) {
     {
       plugins: { import: pluginImport },
       rules: {
-        ...pluginImport.configs.recommended.rules,
-        ...pluginImport.configs.typescript.rules,
-        ...pluginImport.configs.react.rules,
-        // allows for the use of devDependencies in test files
-        "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-        // doesn't REQUIRE default exports, which is a silly idea to begin with
-        "import/prefer-default-export": "off",
-
+        // TODO - revisit these rules
         /**
-         * the 2 rules below are temporarily disabled because
-         * they break the flat config support
+         * currently only used for the path aliases
+         * plugin doesn't support new eslint flat config
+         * and the maintainer is being a complete DICK about it
          */
-        // TODO - revisit these rules
-        "import/no-named-as-default": "off",
-        "import/no-named-as-default-member": "off",
-        /**
-         * and these 2 are also temporarily disabled
-         * because they are throwing false positives
-         * again because of the flat config support
-         * */
-        // TODO - revisit these rules
-        "import/default": "off",
-        "import/namespace": "off",
+        // ...pluginImport.configs.recommended.rules,
+        // ...pluginImport.configs.typescript.rules,
+        // ...pluginImport.configs.react.rules,
+        // allows for the use of devDependencies in test files
+        // "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+        // doesn't REQUIRE default exports, which is a silly idea to begin with
+        // "import/prefer-default-export": "off",
       },
     },
   ];

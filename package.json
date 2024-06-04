@@ -37,6 +37,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-unicorn": "^53.0.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "typescript-eslint": "^7.11.0"
+    "typescript-eslint": "^7.12.0"
   }
 }
