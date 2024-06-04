@@ -46,7 +46,7 @@ export function createConfig(name) {
       },
     },
     {
-      files: ["src/app/**/page.tsx"],
+      files: ["src/app/**/page.tsx", "src/app/**/layout.tsx", "src/app/**/template.tsx"],
       rules: {
         // allows default exports for nextjs's page components (app router)
         "no-restricted-syntax": ["off", { selector: "ExportDefaultDeclaration" }],
