@@ -20,7 +20,9 @@ export function createConfig(name) {
 
     // typescript-eslint settings
     {
-      languageOptions: { parserOptions: { parser, ecmaVersion: "latest", project: true } },
+      languageOptions: {
+        parserOptions: { parser, ecmaVersion: "latest", project: true },
+      },
       rules: {
         /**
          * temporarily disable while most npm packages
@@ -56,7 +58,10 @@ export function createConfig(name) {
       rules: {
         // allows default exports for nextjs's page components (app router)
         // some config files also need to export default, so yeah
-        "no-restricted-syntax": ["off", { selector: "ExportDefaultDeclaration" }],
+        "no-restricted-syntax": [
+          "off",
+          { selector: "ExportDefaultDeclaration" },
+        ],
       },
     },
 
