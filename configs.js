@@ -21,7 +21,7 @@ export function createConfig(name) {
     // typescript-eslint settings
     {
       languageOptions: {
-        parserOptions: { parser, ecmaVersion: "latest", project: true },
+        parserOptions: { parser, ecmaVersion: `latest`, project: true },
       },
       rules: {
         /**
@@ -29,38 +29,38 @@ export function createConfig(name) {
          * still export unsafe types all over the place
          * so I'm guessing until 2034 or something
          */
-        "@typescript-eslint/no-unsafe-argument": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-unsafe-argument": `off`,
+        "@typescript-eslint/no-unsafe-assignment": `off`,
+        "@typescript-eslint/no-unsafe-call": `off`,
+        "@typescript-eslint/no-unsafe-member-access": `off`,
+        "@typescript-eslint/no-unsafe-return": `off`,
 
         // reminds you to remove scattered console statements
-        "no-console": "warn",
+        "no-console": `warn`,
         // no default exports
         "no-restricted-syntax": [
-          "error",
+          `error`,
           {
-            selector: "ExportDefaultDeclaration",
-            message: "Prefer named exports",
+            selector: `ExportDefaultDeclaration`,
+            message: `Prefer named exports`,
           },
         ],
       },
     },
     {
       files: [
-        "src/app/**/{page,layout,template}.tsx",
-        "*.config.{ts,js}",
-        "**/*.config.{ts,js}",
-        "*.d.ts",
-        "**/*.d.ts",
+        `src/app/**/{page,layout,template}.tsx`,
+        `*.config.{ts,js}`,
+        `**/*.config.{ts,js}`,
+        `*.d.ts`,
+        `**/*.d.ts`,
       ],
       rules: {
         // allows default exports for nextjs's page components (app router)
         // some config files also need to export default, so yeah
         "no-restricted-syntax": [
-          "off",
-          { selector: "ExportDefaultDeclaration" },
+          `off`,
+          { selector: `ExportDefaultDeclaration` },
         ],
       },
     },
@@ -88,22 +88,22 @@ export function createConfig(name) {
   ];
 
   // eslint-plugin-react, eslint-plugin-react-hooks, @next/eslint-plugin-next
-  if (name === "vite" || name === "next") {
+  if (name === `vite` || name === `next`) {
     const viteNextConfigs = {
-      files: ["*.jsx", "*.tsx"],
+      files: [`*.jsx`, `*.tsx`],
       plugins: { react: pluginReact, "react-hooks": pluginReactHooks },
       rules: {
-        ...pluginReact.configs["jsx-runtime"].rules,
+        ...pluginReact.configs[`jsx-runtime`].rules,
         ...pluginReactHooks.configs.recommended.rules,
       },
     };
-    if (name === "vite") {
+    if (name === `vite`) {
       config.push(viteNextConfigs);
-    } else if (name === "next") {
-      viteNextConfigs.plugins["@next/next"] = pluginNext;
+    } else if (name === `next`) {
+      viteNextConfigs.plugins[`@next/next`] = pluginNext;
       viteNextConfigs.rules = {
         ...viteNextConfigs.rules,
-        ...pluginNext.configs["core-web-vitals"].rules,
+        ...pluginNext.configs[`core-web-vitals`].rules,
       };
       config.push(viteNextConfigs);
     }
@@ -114,17 +114,17 @@ export function createConfig(name) {
     {
       plugins: { unicorn: pluginUnicorn },
       rules: {
-        ...pluginUnicorn.configs["flat/recommended"].rules,
+        ...pluginUnicorn.configs[`flat/recommended`].rules,
         // null is fine
-        "unicorn/no-null": "off",
+        "unicorn/no-null": `off`,
         // not yet but soon (waiting on nestjs to act right)
-        "unicorn/prefer-top-level-await": "off",
+        "unicorn/prefer-top-level-await": `off`,
         // some names come from external sources, gotta adapt
         "unicorn/prevent-abbreviations": [
-          "error",
+          `error`,
           {
             allowList: { ProcessEnv: true, ImportMetaEnv: true },
-            ignore: ["next-env", "vite-env"],
+            ignore: [`next-env`, `vite-env`],
           },
         ],
       },
@@ -132,7 +132,7 @@ export function createConfig(name) {
 
     // eslint-plugin-vitest
     {
-      files: ["*.test.ts", "*.spec.ts", "*.test.tsx", "*.spec.tsx"],
+      files: [`*.test.ts`, `*.spec.ts`, `*.test.tsx`, `*.spec.tsx`],
       plugins: { vitest: pluginVitest },
       rules: {
         ...pluginVitest.configs.recommended.rules,
@@ -140,7 +140,15 @@ export function createConfig(name) {
     },
 
     // eslint-config-prettier
-    configPrettier
+    configPrettier,
+
+    // only backticks
+    // 2015 was a long time ago, template strings performance is fine
+    {
+      rules: {
+        quotes: [`error`, `backtick`],
+      },
+    }
   );
 
   return config;
