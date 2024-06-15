@@ -117,8 +117,6 @@ export function createConfig(name) {
         ...pluginUnicorn.configs[`flat/recommended`].rules,
         // null is fine
         "unicorn/no-null": `off`,
-        // not yet but soon (waiting on nestjs to act right)
-        "unicorn/prefer-top-level-await": `off`,
         // some names come from external sources, gotta adapt
         "unicorn/prevent-abbreviations": [
           `error`,
@@ -151,5 +149,8 @@ export function createConfig(name) {
     }
   );
 
-  return config;
+  return config.map((config) => ({
+    ...config,
+    ignores: [`node_modules/**/*`, `dist/**/*`],
+  }));
 }
