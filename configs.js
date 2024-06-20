@@ -3,7 +3,6 @@
 import eslint from "@eslint/js";
 // @ts-expect-error, no types for this plugin
 import pluginNext from "@next/eslint-plugin-next";
-import pluginStylisticTs from "@stylistic/eslint-plugin-ts";
 // @ts-expect-error, no types for this plugin
 import configPrettier from "eslint-config-prettier";
 // @ts-expect-error, no types for this plugin
@@ -63,16 +62,6 @@ const noDefaultExportsExceptions = {
   ],
   rules: {
     "no-restricted-syntax": ["off", { selector: "ExportDefaultDeclaration" }],
-  },
-};
-
-/** @type {import('typescript-eslint').ConfigWithExtends} */
-const backticksOnlyInTemplates = {
-  name: "backticks only in templates",
-  plugins: { "@stylistic/ts": pluginStylisticTs },
-  rules: {
-    "@stylistic/ts/quotes": ["error", "double"],
-    "no-template-curly-in-string": "error",
   },
 };
 
@@ -185,7 +174,6 @@ const typescriptParser = {
  */
 export function createConfig(name) {
   /** @type {import('typescript-eslint').ConfigWithExtends[]} */
-
   const config = [
     eslintRecommended,
     ...eslintTypescript.configs.strictTypeChecked,
@@ -193,7 +181,6 @@ export function createConfig(name) {
     consoleWarning,
     noDefaultExports,
     noDefaultExportsExceptions,
-    backticksOnlyInTemplates,
     eslintPluginImport,
     eslintPluginUnicorn,
     eslintPluginReactAndReactHooks,
