@@ -2,7 +2,8 @@
   "compilerOptions": {
     "allowJs": true,
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
+    "esModuleInterop": true
   },
 
   "exclude": ["node_modules"],
