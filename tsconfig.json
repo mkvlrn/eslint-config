@@ -3,7 +3,10 @@
     "allowJs": true,
     "strict": true,
     "noEmit": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
   },
 
   "exclude": ["node_modules"],

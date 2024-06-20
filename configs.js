@@ -20,7 +20,15 @@ import eslintTypescript, { parser } from "typescript-eslint";
 const configs = [
   {
     name: "eslint recommended",
-    ...eslint.configs.recommended,
+    rules: { ...eslint.configs.recommended.rules },
+  },
+  ...eslintTypescript.configs.strictTypeChecked,
+  ...eslintTypescript.configs.stylisticTypeChecked,
+  {
+    name: "typescript parser",
+    languageOptions: {
+      parserOptions: { parser, ecmaVersion: "latest", project: true },
+    },
   },
   {
     // reminds you to remove scattered console statements
@@ -130,12 +138,6 @@ const configs = [
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
       "@typescript-eslint/no-unsafe-return": "off",
-    },
-  },
-  {
-    name: "typescript parser",
-    languageOptions: {
-      parserOptions: { parser, ecmaVersion: "latest", project: true },
     },
   },
 ];
