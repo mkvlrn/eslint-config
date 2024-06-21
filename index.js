@@ -142,7 +142,7 @@ const configs = [
     // backticks only in templates
     name: "backticks only in templates",
     rules: {
-      quotes: ["warn", "double"],
+      quotes: ["warn", "double", { avoidEscape: true }],
       "no-template-curly-in-string": "error",
     },
   },
