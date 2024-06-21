@@ -144,7 +144,7 @@ const configs = [
     // backticks only in templates
     name: "backticks only in templates ",
     rules: {
-      quotes: ["error", "double"],
+      quotes: ["error", "single"],
       "no-template-curly-in-string": "error",
     },
   },
