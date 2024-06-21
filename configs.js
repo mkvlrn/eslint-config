@@ -31,6 +31,21 @@ const configs = [
     },
   },
   {
+    /**
+     * temporarily disable while most npm packages
+     * still export unsafe types all over the place
+     * so I'm guessing until 2034 or something
+     */
+    name: "disable unsafe temporarily",
+    rules: {
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+    },
+  },
+  {
     // reminds you to remove scattered console statements
     name: "console warn",
     rules: {
@@ -126,18 +141,11 @@ const configs = [
     ...configPrettier,
   },
   {
-    /**
-     * temporarily disable while most npm packages
-     * still export unsafe types all over the place
-     * so I'm guessing until 2034 or something
-     */
-    name: "disable unsafe temporarily",
+    // backticks only in templates
+    name: "backticks only in templates ",
     rules: {
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
+      quotes: ["error", "double"],
+      "no-template-curly-in-string": "error",
     },
   },
 ];
