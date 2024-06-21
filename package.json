@@ -10,9 +10,7 @@
   ],
   "main": "index.js",
   "files": [
-    "configs.js",
     "index.js",
-    "vite.js",
     "next.js",
     "package.json",
     "readme.md"
