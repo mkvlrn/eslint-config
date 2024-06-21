@@ -1,5 +1,5 @@
 import pluginNext from '@next/eslint-plugin-next';
-import base from './configs.js';
+import base from './index.js';
 
 /** @type {import('typescript-eslint').ConfigWithExtends[]} */
 const config = [
