@@ -18,7 +18,8 @@ import eslintTypescript, { parser } from "typescript-eslint";
 const configs = [
   {
     name: "eslint recommended",
-    rules: { ...eslint.configs.recommended.rules },
+    ...eslint.configs.recommended,
+    // rules: { ...eslint.configs.recommended.rules },
   },
   ...eslintTypescript.configs.strictTypeChecked,
   ...eslintTypescript.configs.stylisticTypeChecked,
@@ -46,9 +47,7 @@ const configs = [
   {
     // reminds you to remove scattered console statements
     name: "console warn",
-    rules: {
-      "no-console": "warn",
-    },
+    rules: { "no-console": "warn" },
   },
   {
     // absolutely* no default exports, please. code like a gentleman
@@ -56,10 +55,7 @@ const configs = [
     rules: {
       "no-restricted-syntax": [
         "error",
-        {
-          selector: "ExportDefaultDeclaration",
-          message: "Prefer named exports",
-        },
+        { selector: "ExportDefaultDeclaration", message: "Prefer named exports" },
       ],
     },
   },
@@ -130,9 +126,7 @@ const configs = [
     name: "eslint plugin vitest",
     files: ["*.test.ts", "*.spec.ts", "*.test.tsx", "*.spec.tsx"],
     plugins: { vitest: pluginVitest },
-    rules: {
-      ...pluginVitest.configs.recommended.rules,
-    },
+    rules: { ...pluginVitest.configs.recommended.rules },
   },
   {
     name: "disable prettier",
