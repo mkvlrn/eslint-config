@@ -4,7 +4,7 @@ probably requires esm, I don't even know at this point
 ALL dependencies are installed with the package, it's a flat config, so it's fancy that way
 
 ```bash
-yarn add @mkvlrn/eslint-config -D
+yarn add eslint @mkvlrn/eslint-config -D
 ```
 
 ```js
