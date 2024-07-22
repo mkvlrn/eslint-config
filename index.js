@@ -19,16 +19,18 @@ const configs = [
   {
     name: "eslint recommended",
     ...eslint.configs.recommended,
-    // rules: { ...eslint.configs.recommended.rules },
   },
+
   ...eslintTypescript.configs.strictTypeChecked,
   ...eslintTypescript.configs.stylisticTypeChecked,
+
   {
     name: "typescript parser",
     languageOptions: {
       parserOptions: { parser, ecmaVersion: "latest", project: true },
     },
   },
+
   {
     /**
      * temporarily disable while most npm packages
@@ -44,11 +46,13 @@ const configs = [
       "@typescript-eslint/no-unsafe-return": "off",
     },
   },
+
   {
     // reminds you to remove scattered console statements
     name: "console warn",
     rules: { "no-console": "warn" },
   },
+
   {
     // absolutely* no default exports, please. code like a gentleman
     name: "no default exports",
@@ -59,6 +63,7 @@ const configs = [
       ],
     },
   },
+
   {
     /**
      * allows default exports for nextjs's page components (app router)
@@ -76,6 +81,7 @@ const configs = [
       "no-restricted-syntax": ["off", { selector: "ExportDefaultDeclaration" }],
     },
   },
+
   {
     name: "eslint plugin import",
     plugins: { import: pluginImport },
@@ -96,6 +102,7 @@ const configs = [
       // "import/prefer-default-export": "off",
     },
   },
+
   {
     name: "eslint plugin unicorn",
     plugins: { unicorn: pluginUnicorn },
@@ -113,6 +120,7 @@ const configs = [
       ],
     },
   },
+
   {
     name: "eslint plugin react and react hooks",
     files: ["*.tsx"],
@@ -122,16 +130,19 @@ const configs = [
       ...pluginReactHooks.configs.recommended.rules,
     },
   },
+
   {
     name: "eslint plugin vitest",
     files: ["*.test.ts", "*.spec.ts", "*.test.tsx", "*.spec.tsx"],
     plugins: { vitest: pluginVitest },
     rules: { ...pluginVitest.configs.recommended.rules },
   },
+
   {
     name: "disable prettier",
     ...configPrettier,
   },
+
   {
     // backticks only in templates
     name: "backticks only in templates",
