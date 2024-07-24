@@ -54,6 +54,12 @@ const configs = [
   },
 
   {
+    // forces type-safe equality checks
+    name: "strict equality checks",
+    rules: { eqeqeq: "error" },
+  },
+
+  {
     // absolutely* no default exports, please. code like a gentleman
     name: "no default exports",
     rules: {
