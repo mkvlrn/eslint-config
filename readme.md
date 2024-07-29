@@ -11,12 +11,8 @@ yarn add eslint @mkvlrn/eslint-config -D
 // eslint.config.js or eslint.config.mjs if your project isn't using esm by default
 
 // base node, nestjs, and vite/react (without next) projects
-import { base } from "@mkvlrn/eslint-config";
-
-export default base;
+export { base as default } from "@mkvlrn/eslint-config";
 
 // nextjs projects
-import { next } from "@mkvlrn/eslint-config";
-
-export default next;
+export { next as default } from "@mkvlrn/eslint-config";
 ```

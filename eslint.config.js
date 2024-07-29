@@ -1,3 +1,1 @@
-import { base } from "./index.js";
-
-export default base;
+export { base } from ".";

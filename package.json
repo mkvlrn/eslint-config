@@ -10,12 +10,14 @@
   ],
   "main": "index.js",
   "files": [
+    "index.d.ts",
     "index.js",
     "base.js",
     "next.js",
     "package.json",
     "readme.md"
   ],
+  "types": "index.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
