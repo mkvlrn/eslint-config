@@ -11,6 +11,7 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "base.js",
     "next.js",
     "package.json",
     "readme.md"
