@@ -1,8 +1,8 @@
 import pluginNext from "@next/eslint-plugin-next";
-import base from "./index.js";
+import base from "./base.js";
 
 /** @type {import('typescript-eslint').ConfigWithExtends[]} */
-const config = [
+export const next = [
   ...base,
 
   {
@@ -14,6 +14,3 @@ const config = [
     },
   },
 ];
-
-// eslint-disable-next-line no-restricted-syntax
-export default config;
