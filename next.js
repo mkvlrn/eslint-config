@@ -1,5 +1,5 @@
 import pluginNext from "@next/eslint-plugin-next";
-import base from "./base.js";
+import { base } from "./base.js";
 
 /** @type {import('typescript-eslint').ConfigWithExtends[]} */
 export const next = [

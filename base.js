@@ -9,7 +9,6 @@ import pluginImport from "eslint-plugin-import";
 import pluginReact from "eslint-plugin-react";
 // @ts-expect-error, no types for this plugin
 import pluginReactHooks from "eslint-plugin-react-hooks";
-// @ts-expect-error, no types for this plugin
 import pluginUnicorn from "eslint-plugin-unicorn";
 import pluginVitest from "eslint-plugin-vitest";
 import eslintTypescript, { parser } from "typescript-eslint";
