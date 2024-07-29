@@ -23,22 +23,22 @@
   "license": "ISC",
   "devDependencies": {
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^20.14.12",
+    "@types/node": "^22.0.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@eslint/js": "^9.7.0",
+    "@eslint/js": "^9.8.0",
     "@next/eslint-plugin-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-unicorn": "^54.0.0",
+    "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.5.4",
     "typescript-eslint": "^7.17.0"
   },
   "peerDependencies": {
-    "eslint": "^9.7.0"
+    "eslint": "^9.8.0"
   }
 }
