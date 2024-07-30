@@ -47,6 +47,15 @@ export const base = [
   },
 
   {
+    // backticks only in templates
+    name: "backticks only in templates",
+    rules: {
+      quotes: ["warn", "double", { avoidEscape: true }],
+      "no-template-curly-in-string": "error",
+    },
+  },
+
+  {
     // reminds you to remove scattered console statements
     name: "console warn",
     rules: { "no-console": "warn" },
@@ -59,7 +68,7 @@ export const base = [
   },
 
   {
-    // absolutely* no default exports, please. code like a gentleman
+    // default exports are bad
     name: "no default exports",
     rules: {
       "no-restricted-syntax": [
@@ -72,11 +81,11 @@ export const base = [
   {
     /**
      * allows default exports for nextjs's page components (app router)
-     * some config files also need to export default, so yeah
+     * some config files also need to export a default object, so yeah
      */
     name: "no default exports exceptions",
     files: [
-      "src/app/**/{page,layout,template}.tsx",
+      "**/src/app/**/{page,layout,template}.tsx",
       "*.config.{ts,js}",
       "**/*.config.{ts,js}",
       "*.d.ts",
@@ -115,7 +124,7 @@ export const base = [
       ...pluginUnicorn.configs["flat/recommended"].rules,
       // null is fine
       "unicorn/no-null": "off",
-      // some names come from external sources, gotta adapt
+      // some names come from external sources, gotta allow those
       "unicorn/prevent-abbreviations": [
         "error",
         {
@@ -146,14 +155,5 @@ export const base = [
   {
     name: "disable prettier",
     ...configPrettier,
-  },
-
-  {
-    // backticks only in templates
-    name: "backticks only in templates",
-    rules: {
-      quotes: ["warn", "double", { avoidEscape: true }],
-      "no-template-curly-in-string": "error",
-    },
   },
 ];
