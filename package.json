@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "typescript-eslint": "^7.17.0"
+    "typescript-eslint": "^7.18.0"
   },
   "peerDependencies": {
     "eslint": "^9.8.0"
