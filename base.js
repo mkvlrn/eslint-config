@@ -85,7 +85,7 @@ export const base = [
      */
     name: "no default exports exceptions",
     files: [
-      "**/src/app/**/{page,layout,template}.tsx",
+      "**/src/app/**/{page,layout,template,not-found,loading,error,route}.tsx",
       "*.config.{ts,js}",
       "**/*.config.{ts,js}",
       "*.d.ts",
