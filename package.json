@@ -12,8 +12,6 @@
   "files": [
     "index.d.ts",
     "index.js",
-    "base.js",
-    "next.js",
     "package.json",
     "readme.md"
   ],
